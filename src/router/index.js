@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
 import Layout from '@/views/layout/Layout'
 
 Vue.use(VueRouter)
@@ -14,10 +14,10 @@ const routes = [
     isShow: true,
     children: [
       {
-        path: '/code',
-        name: '代码生成',
+        path: '/list',
+        name: '数据库表',
         isShow: true,
-        component: HelloWorld
+        component: () => import('@/views/generator/list')
       }
     ]
   }
