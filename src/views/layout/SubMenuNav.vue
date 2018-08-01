@@ -3,8 +3,8 @@
     v-if="menus.isShow && menus.children && menus.children.length > 0"
     :index="menus.id + ''">
     <template slot="title">
-      <v-image v-if="menus.image" :source="menus.image"></v-image>
-      <icon v-else-if='menus.icon' :name="menus.icon"></icon>
+      <img v-if="menus.image" :src="menus.image"/>
+      <i v-else-if='menus.icon' :class="'fa fa-' + menus.icon"></i>
       <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
       <template v-if="menus.labels && menus.labels.length > 0">
         <span class="pull-right-container pull-right" style="margin-right: 30px;">
@@ -22,8 +22,8 @@
     :route="menus"
     class='single-item'
     v-else-if="menus.isShow && (!menus.children || (menus.children && menus.children.length === 0))">
-    <v-image v-if="menus.image" :source="menus.image" />
-    <icon v-else-if='menus.icon' :name="menus.icon"></icon>
+    <img v-if="menus.image" :src="menus.image"/>
+    <i v-else-if='menus.icon' :class="'fa fa-' + menus.icon"></i>
     <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
     <template v-if="menus.labels && menus.labels.length > 0">
       <span class="pull-right-container">

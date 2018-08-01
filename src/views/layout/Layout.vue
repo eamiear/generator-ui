@@ -6,7 +6,7 @@
 		</aside>
 		<section class="main-content content-wrapper">
       <navbar></navbar>
-      <article class="tabs-container app-main">
+      <article class="app-main">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>

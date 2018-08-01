@@ -10,6 +10,7 @@ const routes = [
     path: '/',
     name: '控制面板',
     component: Layout,
+    icon: 'dashboard',
     isShow: true,
     children: [
       {
@@ -24,7 +25,8 @@ const routes = [
 export {routes}
 
 export default new VueRouter({
+  mode: 'hash',
   scrollBehavior: () => ({y: 0}),
-  base: '/generator',
+  base: '/generator/',
   routes: routes
 })

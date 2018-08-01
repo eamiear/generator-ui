@@ -48,7 +48,8 @@ $hover-item__background-color: transparent;
       //background-color: $navbar-background-color;
       //@include box-shadow(0 -3px 8px 0 rgba(0, 0, 0, 0.44))
       //@include box-shadow(0 2px 20px 0 $navbar-box-shadow-color);
-      background-color: #ecf0f5;
+      // background-color: #ecf0f5;
+      background-color: #fff;
     }
     .navbar .sidebar-toggle{
       color: $sidebar-toggle-color;
@@ -128,7 +129,7 @@ $hover-item__background-color: transparent;
       display: block;
       line-height: 1.4;
       height: auto;
-      padding: 5px 5px 5px 15px;
+      // padding: 5px 5px 5px 15px;
       transition: none;
     }
     .el-menu-item:hover,

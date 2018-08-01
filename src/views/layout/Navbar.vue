@@ -26,7 +26,7 @@
     data () {
       return {
         avatar: '',
-        name: ''
+        name: 'admin'
       }
     },
     computed: {

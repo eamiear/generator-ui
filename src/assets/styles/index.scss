@@ -9,34 +9,6 @@
 @import "theme/dark";
 @import "core";
 
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-:after,:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all .2s ease
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-
 .site-wrapper {
   @include clearfix;
   //height: 100%;
