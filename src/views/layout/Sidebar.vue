@@ -17,25 +17,25 @@
 
 <script>
 import SubMenuNav from './SubMenuNav.vue'
-import isEmpty from 'lodash/isEmpty'
 export default {
   data () {
     return {
+      sidebar_menus: [],
       maxWidth: 230
     }
   },
   components: { SubMenuNav },
   computed: {
-    sidebar_menus: [],
     isMenuCollapse () {
       return false
     },
     menuNavActiveName: {
       get () {
-        return this.$store.state.menu.menuNavActiveName
+        // return this.$store.state.menu.menuNavActiveName
+        return ''
       },
       set (name) {
-        this.$store.dispatch('updateMenuNavActiveName', name)
+        // this.$store.dispatch('updateMenuNavActiveName', name)
       }
     }
   },
@@ -43,35 +43,33 @@ export default {
     $route: 'routerHandler'
   },
   created () {
-    this.$store.dispatch('GenerateSidebarMenu').then(() => {
-      this.routerHandler(this.$route)
-    })
+    // this.routerHandler(this.$route)
   },
   mounted () {
-    
+
   },
   methods: {
     routerHandler (route) {
       if (route.meta && route.meta.isTab) {
-        let tab = this.$store.state.tab.tabsNavList.filter(tab => tab.name === route.name)[0]
-        if (isEmpty(tab)) {
-          const menuNav = this.getMenuNavByRouteName(route.name, this.sidebar_menus)
-          if (!isEmpty(menuNav)) {
-            tab = {
-              id: menuNav.id,
-              name: route.name,
-              title: menuNav.name,
-              type: route.meta.type,
-              path: menuNav.path,
-              query: route.query
-            }
-            this.$store.dispatch('addTabsNavList', tab)
-          } else {
-            // return console.error('没有可用tab标签页!')
-          }
-        }
-        this.menuNavActiveName = `${tab.id}`
-        this.$store.dispatch('updateTabsActiveName', `${route.name}`)
+        // let tab = this.$store.state.tab.tabsNavList.filter(tab => tab.name === route.name)[0]
+        // if (isEmpty(tab)) {
+        //   const menuNav = this.getMenuNavByRouteName(route.name, this.sidebar_menus)
+        //   if (!isEmpty(menuNav)) {
+        //     tab = {
+        //       id: menuNav.id,
+        //       name: route.name,
+        //       title: menuNav.name,
+        //       type: route.meta.type,
+        //       path: menuNav.path,
+        //       query: route.query
+        //     }
+        //     this.$store.dispatch('addTabsNavList', tab)
+        //   } else {
+        //     // return console.error('没有可用tab标签页!')
+        //   }
+        // }
+        // this.menuNavActiveName = `${tab.id}`
+        // this.$store.dispatch('updateTabsActiveName', `${route.name}`)
       }
     },
     getMenuNavByRouteName (routeName, menuNavList) {
