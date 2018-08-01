@@ -1,6 +1,6 @@
 # generator-ui
 
-> A Vue.js project
+> mybatis generator ui
 
 ## Build Setup
 

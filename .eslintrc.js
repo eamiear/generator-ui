@@ -11,7 +11,7 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
+    'plugin:vue/essential',
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -23,6 +23,13 @@ module.exports = {
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
+    'no-trailing-spaces': 'off',
+    "indent": ['off'],
+    "curly": [2, "multi-line"],
+    "space-before-function-paren": ["off"],
+    "no-multiple-empty-lines": [2, { "max": 1 }],
+    "no-trailing-spaces": [0],
+    "no-tabs": ['off'],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
