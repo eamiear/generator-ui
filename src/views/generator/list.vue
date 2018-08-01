@@ -57,8 +57,7 @@ export default {
         {
           label: '操作',
           renderToolBox: this.getToolboxRender,
-          align: 'center',
-          tooltip: true
+          align: 'center'
         }
       ]
     }
