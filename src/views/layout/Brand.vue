@@ -1,6 +1,6 @@
 <template>
   <a href="#" class="brand">
-    <span class="brand-label">generator</span>
+    <span class="brand-label">代码生成器</span>
   </a>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     }
   },
   computed: {
-  
+
   },
   methods: {}
 }

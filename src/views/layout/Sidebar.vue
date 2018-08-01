@@ -4,7 +4,8 @@
       class="sidebar-menu"
       mode="vertical"
       unique-opened
-      :default-active="menuNavActiveName"
+      :router="true"
+      :default-active="$route.path"
       :collapse="isMenuCollapse">
       <sub-menu-nav
         v-for="menu in sidebar_menus"
@@ -17,10 +18,11 @@
 
 <script>
 import SubMenuNav from './SubMenuNav.vue'
+import {routes} from '@/router'
 export default {
   data () {
     return {
-      sidebar_menus: [],
+      sidebar_menus: routes,
       maxWidth: 230
     }
   },

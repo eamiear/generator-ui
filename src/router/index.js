@@ -8,17 +8,20 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'layout',
+    name: '控制面板',
     component: Layout,
+    isShow: true,
     children: [
       {
         path: '/code',
-        name: 'code',
+        name: '代码生成',
+        isShow: true,
         component: HelloWorld
       }
     ]
   }
 ]
+export {routes}
 
 export default new VueRouter({
   scrollBehavior: () => ({y: 0}),

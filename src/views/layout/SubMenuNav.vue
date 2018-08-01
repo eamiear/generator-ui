@@ -18,10 +18,10 @@
       :menus="item"></sub-menu-nav>
   </el-submenu>
   <el-menu-item
-    :index="menus.id + ''"
+    :index="menus.path"
+    :route="menus"
     class='single-item'
-    v-else-if="menus.isShow && (!menus.children || (menus.children && menus.children.length === 0))"
-    @click="routerHandler(menus.path, $route)">
+    v-else-if="menus.isShow && (!menus.children || (menus.children && menus.children.length === 0))">
     <v-image v-if="menus.image" :source="menus.image" />
     <icon v-else-if='menus.icon' :name="menus.icon"></icon>
     <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
@@ -44,14 +44,7 @@ export default {
   computed: {
   },
   methods: {
-    routerHandler (path, preRoute) {
-      const routeName = path
-      if (/\S/.test(routeName)) {
-        this.$router.push({name: routeName, query: {s: Date.now()}, params: {s: Date.now()}}, (to) => {
-          to.matched && to.matched.length === 0 && this.$router.push({path: '/404'})
-        })
-      }
-    }
+
   }
 }
 </script>
