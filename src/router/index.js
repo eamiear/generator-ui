@@ -14,6 +14,12 @@ const routes = [
     isShow: true,
     children: [
       {
+        path: '/props',
+        name: '属性列表',
+        isShow: true,
+        component: () => import('@/views/generator/props')
+      },
+      {
         path: '/list',
         name: '数据库表',
         isShow: true,
