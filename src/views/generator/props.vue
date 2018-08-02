@@ -68,18 +68,18 @@ export default {
           align: 'center'
         },
         {
-          label: 'value',
-          prop: '键值',
+          label: '键值',
+          prop: 'value',
           align: 'center'
         },
         {
-          label: 'status',
-          prop: '状态',
+          label: '状态',
+          prop: 'status',
           align: 'center'
         },
         {
-          label: 'remark',
-          prop: '描述',
+          label: '描述',
+          prop: 'remark',
           align: 'center'
         },
         {
@@ -151,6 +151,7 @@ export default {
             type: 'success',
             message: '操作成功'
           })
+          this.dialog.visible = false
           this.refresh()
         } else {
           this.$message({
