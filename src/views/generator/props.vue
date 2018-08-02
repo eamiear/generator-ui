@@ -75,7 +75,10 @@ export default {
         {
           label: '状态',
           prop: 'status',
-          align: 'center'
+          align: 'center',
+          formatter (status) {
+            return status === 0 ? '可用' : '移除'
+          }
         },
         {
           label: '描述',
