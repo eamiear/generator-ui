@@ -13,7 +13,7 @@
     </table-base>
 
     <el-dialog :title="dialog.title" :visible.sync="dialog.visible" width="40%" :close-on-click-modal="false">
-      <el-form :model="propsModel">
+      <el-form :model="propsModel" ref="propsEntity">
         <el-form-item label="键名" :label-width="dialog.labelWidth">
           <el-input v-model="propsModel.key" auto-complete="off"></el-input>
         </el-form-item>
@@ -95,6 +95,13 @@ export default {
   },
   components: {
     TableBase
+  },
+  watch: {
+    'dialog.visible' (visible) {
+      if (visible === false) {
+        this.$refs['propsEntity'].resetFields()
+      }
+    }
   },
   methods: {
     getToolboxRender (h, {id}) {
