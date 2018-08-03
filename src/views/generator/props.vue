@@ -14,13 +14,13 @@
 
     <el-dialog :title="dialog.title" :visible.sync="dialog.visible" width="40%" :close-on-click-modal="false">
       <el-form :model="propsModel" ref="propsEntity">
-        <el-form-item label="键名" :label-width="dialog.labelWidth">
+        <el-form-item label="键名" prop="key" :rules="[{required: true, message: '请输入键名', trigger:'blur'}]" :label-width="dialog.labelWidth">
           <el-input v-model="propsModel.key" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="键值" :label-width="dialog.labelWidth">
+        <el-form-item label="键值" prop="value" :rules="[{required: true, message: '请输入键值', trigger:'blur'}]" :label-width="dialog.labelWidth">
           <el-input v-model="propsModel.value"></el-input>
         </el-form-item>
-        <el-form-item label="描述" :label-width="dialog.labelWidth">
+        <el-form-item label="描述" prop="remark" :label-width="dialog.labelWidth">
           <el-input v-model="propsModel.remark"></el-input>
         </el-form-item>
       </el-form>
@@ -48,7 +48,7 @@ export default {
         title: '新增属性',
         visible: false,
         status: 0,
-        labelWidth: '50px'
+        labelWidth: '60px'
       },
       propsModel: {
         key: '',
@@ -155,18 +155,22 @@ export default {
       })
     },
     submitPropsModel () {
-      API.createOrUpdateRecord(this.dialog.status, this.propsModel).then(response => {
-        if (response.code === 0) {
-          this.$message({
-            type: 'success',
-            message: '操作成功'
-          })
-          this.dialog.visible = false
-          this.refresh()
-        } else {
-          this.$message({
-            type: 'error',
-            message: '操作失败'
+      this.$refs['propsEntity'].validate(valid => {
+        if (valid) {
+          API.createOrUpdateRecord(this.dialog.status, this.propsModel).then(response => {
+            if (response.code === 0) {
+              this.$message({
+                type: 'success',
+                message: '操作成功'
+              })
+              this.dialog.visible = false
+              this.refresh()
+            } else {
+              this.$message({
+                type: 'error',
+                message: '操作失败'
+              })
+            }
           })
         }
       })
