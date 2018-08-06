@@ -20,6 +20,7 @@
 import TableBase from '@/assets/package/table-base'
 import '@/assets/package/style/index.scss'
 import API from '@/api/generator'
+import Constants from '@/common/constants'
 import isArray from 'lodash.isArray'
 export default {
   data () {
@@ -81,7 +82,7 @@ export default {
         alert('请选择记录!')
         return
       }
-      location.href = 'http://192.168.231.67:6060/ura/generator/code?tables=' + JSON.stringify(tableName)
+      location.href = `${Constants.BASE_API}/code?tables=` + JSON.stringify(tableName)
     },
     async fetchTableDataAsync (pageNo, pageSize) {
       this.query.page = pageNo

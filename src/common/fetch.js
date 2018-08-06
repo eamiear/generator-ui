@@ -1,7 +1,8 @@
 import axios from 'axios'
+import Constants from '@/common/constants'
 
 const service = axios.create({
-  baseURL: 'http://192.168.231.67:6060/ura/generator',
+  baseURL: `${Constants.BASE_API}`,
   timeout: 16000
 })
 
