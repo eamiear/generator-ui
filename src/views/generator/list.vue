@@ -97,10 +97,9 @@ export default {
       ins.reload()
     },
     selectRows (row) {
-      this.selectedTableNames = row
-      // row.forEach(item => {
-      //   this.selectedTableNames.push(item.tableName)
-      // })
+      this.selectedTableNames = row.map(item => {
+        return item.tableName
+      })
     }
   }
 }
